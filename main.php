@@ -1,4 +1,7 @@
-<!DOCTYPE html>
+<?php
+session_start();
+
+?>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -16,10 +19,12 @@
             </div>
             <nav>
                 <ul>
-                    <li><a href="main.html">Domov</a></li>
+                    <li><a href="main.php">Domov</a></li>
                     <li><a href="produkty.html">Produkty</a></li>
                     <li><a href="">Kontakt</a></li>
                     <li><a href="ucet.html">Ucet</a></li>
+                    <li><a href="logout.php"><?php if (isset($_SESSION['username'])) { echo "Odhlasit";} ?></a></li>
+                    <li><a href="profil.php"><?php if (isset($_SESSION['username'])) { echo $_SESSION['username'];} ?></a></li>
                 </ul>
             </nav>
         </div>
@@ -36,6 +41,23 @@
 
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+    <script>
 
+        function display_ct5() {
+            var x = new Date()
+            var ampm = x.getHours( ) >= 12 ? ' PM' : ' AM';
+
+            var x1= x.getDate() + "/" + (x.getMonth()+1)+ "/"  + x.getFullYear();
+            x1 = x1 + " - " +  x.getHours( )+ ":" +  x.getMinutes() + ":" +  x.getSeconds() + ":" + ampm;
+            document.getElementById('ct5').innerHTML = x1;
+            display_c5();
+        }
+        function display_c5(){
+            var refresh=1000;
+            mytime=setTimeout('display_ct5()',refresh)
+        }
+        display_c5()
+    </script>
+    <span id='ct5' style="background-color: #FFFF00"></span>
 </body>
 </html>

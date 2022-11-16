@@ -16,7 +16,7 @@
     </div>
     <nav>
       <ul>
-        <li><a href="main.html">Domov</a></li>
+        <li><a href="main.php">Domov</a></li>
         <li><a href="produkty.html">Produkty</a></li>
         <li><a href="">Kontakt</a></li>
         <li><a href="ucet.html">Ucet</a></li>
@@ -37,13 +37,13 @@
         <div class="form-container">
           <div class="form-btn">
             <span>Prihlasenie</span>
-            <span>Registracia</span>
+            <a href="registracia.html">Registracia</a>
           </div>
-          <form >
-            <input type="text" placeholder="Meno">
-            <input type="password" placeholder="Heslo">
+          <form action="validation.php" method="post">
+            <input type="text" name="user" placeholder="Meno" >
+            <input type="password" name="password" placeholder="Heslo" >
             <button type="submit" class="btn">Prihlasit sa</button>
-            <a href="">Zabudnute heslo</a>
+            <a href="login.php">Zabudnute heslo</a>
           </form>
 
         </div>
