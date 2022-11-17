@@ -20,8 +20,8 @@ session_start();
             <ul>
                 <li><a href="main.php">Domov</a></li>
                 <li><a href="produkty.html">Produkty</a></li>
-                <li><a href="">Kontakt</a></li>
-                <li><a href="ucet.html">Ucet</a></li>
+                <li><a href="Udaje.php">Udaje</a></li>
+                <li><a href="ucet.html">Prihlasenie</a></li>
                 <li><a href="logout.php">Odhlasenie</a></li>
                 <li><a href="profil.php"><?php if (isset($_SESSION['username'])) { echo $_SESSION['username'];} ?></a></li>
             </ul>
@@ -31,16 +31,14 @@ session_start();
 
         <div class="col-2">
             <form action="delete.php" method="post">
-                <input type="text" name="user" placeholder="Meno ktore vymazes" >
             <button type="submit" name="user_delete"  class="btn">Odstranit ucet</button>
             </form>
         </div>
 
         <div class="col-2">
             <form action="update.php" method="post">
-                <input type="text" name="password" placeholder="Tvoje heslo" >
-                <input type="text" name="password" placeholder="Nove heslo" >
-                <button type="submit" name="user_delete"  class="btn">Zmenit heslo</button>
+                <input type="text" name="passwordNew" placeholder="Nove heslo" >
+                <button type="submit" name="password_change"  class="btn">Zmenit heslo</button>
             </form>
         </div>
     </div>

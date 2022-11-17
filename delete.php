@@ -12,20 +12,17 @@ $name = $_POST['user'];
 $password = "password";
 $email = "email";
 
+$user=$_SESSION['username'];
+
+$reg = "DELETE FROM usertable WHERE name='$user'";
+mysqli_query($con, $reg);
+echo "Ucet zruseny";
+session_destroy();
+header('Location: main.php');
 
 
-if (isset($_POST['user_delete'])){
-    $user_id =  $_POST['user'];
-    $query = "DELETE FROM usertable WHERE name='$user_id'";
-    $query_run = mysqli_query($con,$query);
 
-    if ($query_run){
-        $_SESSION['status'] = "vymazane data";
-        header("Location: main.php");
-    } else {
-        $_SESSION['status'] = "nevymazane data";
-        header("Location: profil.php");
-    }
-}
+
+
 $con->close();
 ?>

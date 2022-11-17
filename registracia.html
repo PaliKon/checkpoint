@@ -18,8 +18,8 @@
       <ul>
         <li><a href="main.php">Domov</a></li>
         <li><a href="produkty.html">Produkty</a></li>
-        <li><a href="">Kontakt</a></li>
-        <li><a href="ucet.html">Ucet</a></li>
+        <li><a href="Udaje.php">Udaje</a></li>
+        <li><a href="ucet.html">Prihlasenie</a></li>
       </ul>
     </nav>
 
@@ -42,15 +42,15 @@
           <form name="frmContact" method="post" action="contact.php" onsubmit="poslatMail(); reset(); return false">
             <p>
               <label >Name </label>
-              <input type="text" name="user" id="user" placeholder="Meno">
+              <input type="text" name="user" id="user" placeholder="Meno" required="">
             </p>
             <p>
-              <label >password</label>
-              <input type="text" name="password" id="password" placeholder="Heslo">
+              <label >Heslo</label>
+              <input type="text" name="password" id="password" placeholder="Heslo" required="">
             </p>
             <p>
-              <label >email</label>
-              <input type="text" name="email" id="email" placeholder="Email">
+              <label >Email</label>
+              <input type="text" name="email" id="email" placeholder="Email" required="">
             </p>
 
             <p>

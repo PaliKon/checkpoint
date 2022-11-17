@@ -21,11 +21,14 @@ session_start();
                 <ul>
                     <li><a href="main.php">Domov</a></li>
                     <li><a href="produkty.html">Produkty</a></li>
-                    <li><a href="">Kontakt</a></li>
-                    <li><a href="ucet.html">Ucet</a></li>
-                    <li><a href="logout.php"><?php if (isset($_SESSION['username'])) { echo "Odhlasit";} ?></a></li>
-                    <li><a href="profil.php"><?php if (isset($_SESSION['username'])) { echo $_SESSION['username'];} ?></a></li>
+                    <li><a href="Udaje.php">Udaje</a></li>
+                    <li><a href="ucet.html">Prihlasenie</a></li>
+<!--                    <li><a href="logout.php">--><?php //if (isset($_SESSION['username'])) { echo "Odhlasit";} ?><!--</a></li>-->
+                    <li><a  href="profil.php"><?php if (isset($_SESSION['username'])) { echo $_SESSION['username'];} ?></a></li>
                 </ul>
+                <img src="obrazky/profile.png" class="user-pic" onclick="toggleMenu()">
+
+
             </nav>
         </div>
         <div class="row">
@@ -40,6 +43,7 @@ session_start();
     </div>
 
     </div>
+    <button class="buttonSpat" onclick="topScreen() ">Spät hore</button>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
     <script>
 
@@ -59,5 +63,15 @@ session_start();
         display_c5()
     </script>
     <span id='ct5' style="background-color: #FFFF00"></span>
+<script>
+    let subMenu =document.getElementById("subMenu");
+
+    function toggleMenu(){
+        subMenu.classList.toggle("open-menu");
+    }
+</script>
+<script>
+        const topScreen = () => window.scrollTo({top:0,behavior: 'smooth'});
+</script>
 </body>
 </html>
