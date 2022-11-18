@@ -20,7 +20,7 @@ $email = $_POST['email'];
 
 if (empty($_POST['user']) || empty($_POST['password']) || empty($_POST['email'])) {
     // One or more values are empty.
-    exit('Please complete the registration form');
+    exit('Prosim vypln celu registraciu');
 }
 
 
