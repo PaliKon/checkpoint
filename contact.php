@@ -18,12 +18,26 @@ $password = $_POST['password'];
 $email = $_POST['email'];
 
 
+if (empty($_POST['user']) || empty($_POST['password']) || empty($_POST['email'])) {
+    // One or more values are empty.
+    exit('Please complete the registration form');
+}
+
 
 $s = "SELECT * FROM usertable WHERE name = '$name'";
 // insert in database
 $result= mysqli_query($con, $s);
 $num = mysqli_num_rows($result);
 
+if (!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
+    exit('Email je neplatny');
+}
+if (preg_match('/^[a-zA-Z0-9]+$/', $_POST['user']) == 0) {
+    exit('Meno neni vhodne!');
+}
+if (strlen($_POST['password']) > 20 || strlen($_POST['password']) < 5) {
+    exit('Heslo musi byt dlhe od 5 do 20 znakov!');
+}
 
 if($num == 1)
 {
